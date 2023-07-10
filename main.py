@@ -8,5 +8,5 @@ def f():
     }
     # Создания файла Json
     with open("data.json", "w") as f:
-        json.dump(data, f)
+        f.write(json.dumps(data, indent=4))
 f()
