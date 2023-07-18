@@ -31,9 +31,11 @@ def f():
         data = json.load(file)
         print(data)
     def filter_name():
+        # Запрос на то что показать
+        inp = input("Введите: ")
         # Фильтрация данных и вывод определенных полей (например, только имен пользователей)
         for name in data:
-            user_name = data[name].get('user_name')
+            user_name = data[name].get(inp)
             if user_name:
                 print(user_name)
     filter_name()
