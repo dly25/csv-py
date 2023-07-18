@@ -21,9 +21,23 @@ def f():
         data = json.load(file)
         print(data)
 
-    # Изменения JSON файла
-    data[list(data.keys())[1]]["user_name"] = "Artem"
+    def change_data():
+        # Запрос на изменения Data # Изменения JSON файла
+        try:
+            #inp_person = input("Введите запрос на изменения(Персона): ")
+            #inp_user = input("Введите запрос на изменения(User_name, user_age...): ")
+            #inp_change = input("Введите запрос на изменения: ")
 
+            # data[inp_person][inp_user] = inp_change
+
+            inp_person, inp_user, inp_change = input("Введите запрос: ").strip().split()
+
+            data[inp_person][inp_user] = inp_change
+
+        except ValueError as e:
+            print("НЕ правильный запрос!")
+
+    change_data()
     with open("data.json", "w") as file:
         file.write(json.dumps(data, indent=4, ensure_ascii=False))
 
