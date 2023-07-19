@@ -1,68 +1,46 @@
 import json
 def load_data():
     try:
-        with open("data.json", encoding="utf-8") as file:
+        with open("data.json", "r", encoding="utf-8") as file:
             data = json.load(file)
-            return data
     except FileNotFoundError:
-        print("Файл не найден, создан новый файл..")
-        return {}
+        print("Не найден файл!")
     except json.JSONDecodeError:
-        print("Что-то не правильное в файле")
+        print("Что-то не правильно в файле!")
 
 def save_data(data):
     with open("data.json", "w", encoding="utf-8") as file:
         file.write(json.dumps(data, indent=4, ensure_ascii=False))
 
-def slow_data(data):
+def show_data(data):
     try:
-        inp = input("Введите запрос на показ data(yes/no): ")
+        inp = input("Введите запрос на показ data (yes/no): ")
         if inp == "yes":
             print(data)
         elif inp == "no":
             print()
         else:
-            raise ValueError("НЕ правильный запрос")
+            raise ValueError("НЕ правильный запрос!")
     except ValueError as e:
         print(e)
 
 def change_data(data):
     try:
-        inp_person, inp_user, inp_change = input("Введите запрос: ").strip().split()
-        data[inp_person][inp_user] = inp_change
-        save_data()
+        inp_person, inp_item, inp_change = input("Введите запрос на изменения data пример(person1)(user_name)(изменения) ").strip().split()
+        data[inp_person][inp_item] = inp_change
+        save_data(data)
+        show_data(data)
     except ValueError:
         print("НЕ правильный запрос!")
-
-def filter_name(data):
-    try:
-        inp = input("Введите: ")
-        for output in data:
-            output_data = data[output].get(inp)
-            if output_data:
-                print("Вывод: ", output_data)
-            else:
-                raise ValueError("Не правильный запрос!")
-    except ValueError as e:
-        print(e)
-
-def count_data(data):
-    try:
-        inp = input("Введите запрос: ")
-        result = len(data[inp])
-        print(result)
-    except ValueError:
-        print("НЕ правильный запрос")
     except KeyError:
-        print("НЕ правильный ключ")
+        print("НЕ правильный ключ!")
 
 def main():
     data = load_data()
 
-    slow_data(data)
+    save_data(data)
+    show_data(data)
     change_data(data)
-    filter_name(data)
-    count_data(data)
 
 if __name__ == "__main__":
     main()
