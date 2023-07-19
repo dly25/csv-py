@@ -56,7 +56,7 @@ def count_data(data):
     except KeyError:
         print("НЕ правильный ключ")
 
-def f():
+def main():
     data = load_data()
 
     slow_data(data)
@@ -65,4 +65,4 @@ def f():
     count_data(data)
 
 if __name__ == "__main__":
-    f()
+    main()
