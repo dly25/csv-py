@@ -33,7 +33,10 @@ def f():
         
     def count_data(data):
         try:
-            result = len(data)
+            inp = input("Введите запрос: ")
+
+            result = len(data[inp])
+
             print(result)
         except ValueError as e:
             print("НЕ правильный запрос")
