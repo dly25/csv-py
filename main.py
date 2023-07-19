@@ -20,7 +20,7 @@ def show_data(data):
         inp = input("Введите запрос на показ data (yes/no): ")
         if inp == "yes":
             print(data)
-        elif inp == "no":
+        elif inp in ("no", "#"):
             print()
         else:
             raise ValueError("НЕ правильный запрос!")
@@ -30,7 +30,7 @@ def show_data(data):
 def change_data(data):
     try:
         inp = input("Хотите изменить файл?(yes/no): ")
-        if not inp == "no":
+        if not inp in ("no", "#"):
             inp_person, inp_item, inp_change = input("Введите запрос на изменения data пример(person1)"
                                                      "(user_name)(изменения) ").strip().split()
             data[inp_person][inp_item] = inp_change
@@ -46,7 +46,7 @@ def change_data(data):
 def filter_data(data):
     try:
         inp = input("Хотите отфильтровать файл?(yes/no): ")
-        if not inp == "no":
+        if not inp in ("no", "#"):
             inp_filter = input("Введите хотите отфильтровать: ")
             for output in data:
                 output_name = data[output].get(inp_filter)
@@ -65,10 +65,21 @@ def filter_data(data):
 def count_data(data):
     try:
         inp = input("Хотите count файл?(yes/no): ")
-        if not inp == "no":
+        if not inp in ("no", "#"):
             inp_count = input("Введите хотите count: ")
             result = len(data[inp_count])
             print(result)
+        else:
+            print()
+    except ValueError as e:
+        print(e)
+
+def age_data(data):
+    try:
+        inp = input("Хотите узнать person по возрасту файл?(yes/no): ")
+        if not inp in ("no", "#"):
+            sorted_data = sorted(data.values(), key=lambda x: x.get("user_age", 0), reverse=True)
+            print(sorted_data)
         else:
             print()
     except ValueError as e:
@@ -82,6 +93,7 @@ def main():
     change_data(data)
     filter_data(data)
     count_data(data)
+    age_data(data)
 
 if __name__ == "__main__":
     main()
