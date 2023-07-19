@@ -22,7 +22,7 @@ def f():
         print(data)
 
     # Изменения JSON файла
-    data[list(data.keys())][0]["user_name"] = "artem"
+    data[list(data.keys())[0]]["user_name"] = "artem"
 
     with open("data.json", "w") as file:
         file.write(json.dumps(data, indent=4, ensure_ascii=False))
@@ -30,4 +30,17 @@ def f():
     with open("data.json", "r", encoding="utf-8") as file:
         data = json.load(file)
         print(data)
-f()
+        
+    def count_data(data):
+        try:
+            result = len(data)
+            print(result)
+        except ValueError as e:
+            print("НЕ правильный запрос")
+
+    with open("data.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
+        count_data(data)
+
+if __name__ == "__main__":
+    f()
