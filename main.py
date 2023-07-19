@@ -14,6 +14,18 @@ def save_data(data):
     with open("data.json", "w", encoding="utf-8") as file:
         file.write(json.dumps(data, indent=4, ensure_ascii=False))
 
+def slow_data(data):
+    try:
+        inp = input("Введите запрос на показ data(yes/no): ")
+        if inp == "yes":
+            print(data)
+        elif inp == "no":
+            print()
+        else:
+            raise ValueError("НЕ правильный запрос")
+    except ValueError as e:
+        print(e)
+
 def change_data(data):
     try:
         inp_person, inp_user, inp_change = input("Введите запрос: ").strip().split()
@@ -46,8 +58,8 @@ def count_data(data):
 
 def f():
     data = load_data()
-    print(data)
 
+    slow_data(data)
     change_data(data)
     filter_name(data)
     count_data(data)
