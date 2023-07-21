@@ -29,6 +29,7 @@ def show_data(data):
     except ValueError as e:
         print(e)
 
+
 def change_data(data):
     try:
         inp = input("Хотите изменить файл?(yes/no): ")
