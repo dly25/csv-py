@@ -13,10 +13,10 @@ def sort_data(data):
                     reverse=bool(inp_order)
                     )
                 print(sorted_data)
-                print()
+                print("\n")
                 terminal_data()
         else:
-            print()
+            print("\n")
             terminal_data()
     except ValueError as e:
         print(e)

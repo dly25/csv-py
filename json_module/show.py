@@ -7,7 +7,7 @@ def show_data(data):
             print(data)
             terminal_data()
         elif inp in ("no", "#"):
-            print()
+            print("\n")
             terminal_data()
         else:
             raise ValueError("НЕ правильный запрос!")

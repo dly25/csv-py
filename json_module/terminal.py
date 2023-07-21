@@ -26,5 +26,5 @@ def terminal_data():
             print("Ошибка!!! Не правильный ввод команды")
             terminal_data()
     except KeyboardInterrupt:
-        print()
+        print("\n")
 

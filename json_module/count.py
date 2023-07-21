@@ -9,7 +9,7 @@ def count_data(data):
             print(result)
             terminal_data()
         else:
-            print()
+            print("\n")
             terminal_data()
     except ValueError as e:
         print(e)
