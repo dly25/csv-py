@@ -1,5 +1,5 @@
 def change_data(data):
-    from terminal import terminal_data
+    from .terminal import terminal_data
     from load_save import load_data, save_data
 
     try:

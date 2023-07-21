@@ -1,17 +1,17 @@
 def filter_data(data):
-    from terminal import terminal_data
+    from .terminal import terminal_data
 
     try:
         inp = input("Хотите отфильтровать файл?(yes/no): ")
-        if not inp in ("no", "#"):
-            inp_filter = input("Введите хотите отфильтровать: ")
-            for output in data:
-                output_name = data[output].get(inp_filter)
-                if output_name:
-                    print(output_name)
-                    terminal_data()
-                else:
-                    raise ValueError("НЕ правильный запрос!")
+        if not inp.lower() in ("no", "#"):
+            inp_filter = input("Введите что хотите отфильтровать: ")
+            for key, value in data.items():
+                if inp_filter in value:
+                    print(f"{key}: {value[inp_filter]}")
+            else:
+                raise ValueError("НЕ правильный запрос!")
+            print()
+            terminal_data()
         else:
             print()
             terminal_data()

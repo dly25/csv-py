@@ -1,5 +1,5 @@
 def show_data(data):
-    from terminal import terminal_data
+    from .terminal import terminal_data
 
     try:
         inp = input("Введите запрос на показ data (yes/no): ")

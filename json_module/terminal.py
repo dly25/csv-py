@@ -4,7 +4,7 @@ from .show import show_data
 from .change import change_data
 from .filter import filter_data
 from .count import count_data
-from .age import age_data
+from .sort import sort_data
 def terminal_data():
 
     data = load_data()
@@ -20,8 +20,8 @@ def terminal_data():
             filter_data(data)
         elif inp == "count":
             count_data(data)
-        elif inp == "age":
-            age_data(data)
+        elif inp == "sort":
+            sort_data(data)
         else:
             print("Ошибка!!! Не правильный ввод команды")
             terminal_data()
