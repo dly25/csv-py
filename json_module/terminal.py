@@ -10,7 +10,7 @@ def terminal_data():
     data = load_data()
     save_data(data)
     try:
-        inp = input("Введите команду: ")
+        inp = input("Введите команду(show, change, filter, count, sort): ")
 
         if inp == "show":
             show_data(data)
@@ -26,5 +26,5 @@ def terminal_data():
             print("Ошибка!!! Не правильный ввод команды")
             terminal_data()
     except KeyboardInterrupt:
-        print("\n")
+        print()
 

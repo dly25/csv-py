@@ -5,9 +5,10 @@ def show_data(data):
         inp = input("Введите запрос на показ data (yes/no): ")
         if inp == "yes":
             print(data)
+            print()
             terminal_data()
         elif inp in ("no", "#"):
-            print("\n")
+            print()
             terminal_data()
         else:
             raise ValueError("НЕ правильный запрос!")

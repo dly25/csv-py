@@ -3,13 +3,13 @@ def count_data(data):
 
     try:
         inp = input("Хотите count файл?(yes/no): ")
-        if not inp in ("no", "#"):
+        if not inp.lower() in ("no", "#"):
             inp_count = input("Введите персону от которой хотите count: ")
             result = len(data[inp_count])
             print(result)
             terminal_data()
         else:
-            print("\n")
+            print()
             terminal_data()
     except ValueError as e:
         print(e)

@@ -9,10 +9,10 @@ def change_data(data):
                                                      "(user_name)(изменения) ").strip().split()
             data[inp_person][inp_item] = inp_change
             save_data(data)
-            print("\n")
+            print()
             terminal_data()
         else:
-            print("\n")
+            print()
             terminal_data()
     except ValueError:
         print("НЕ правильный запрос!")

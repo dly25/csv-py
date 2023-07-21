@@ -10,10 +10,10 @@ def filter_data(data):
                     print(f"{key}: {value[inp_filter]}")
             else:
                 raise ValueError("НЕ правильный запрос!")
-            print("\n")
+            print()
             terminal_data()
         else:
-            print("\n")
+            print()
             terminal_data()
     except ValueError as e:
         print(e)
