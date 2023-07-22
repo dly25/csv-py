@@ -8,7 +8,7 @@ def sort_data(data):
                         "(user_age (1/0) / no): ").strip().split()
             if not inp_that == "no":
                 sorted_data = sorted(
-                    data.values(),
+                    data.value(),
                     key=lambda x: x.get(inp_that, 0),
                     reverse=bool(inp_order)
                     )

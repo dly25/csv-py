@@ -1,6 +1,5 @@
 import json
 def load_data():
-
     try:
         with open("data.json", "r", encoding="utf-8") as file:
             data = json.load(file)
@@ -15,3 +14,13 @@ def load_data():
 def save_data(data):
     with open("data.json", "w", encoding="utf-8") as file:
         file.write(json.dumps(data, indent=4, ensure_ascii=False))
+
+def sorted_data(data):
+    import collections
+
+    try:
+        sort_data = collections.OrderedDict(sorted(data.items()))
+        save_data(sort_data)
+
+    except Exception:
+        print("Ошибка: Exception!")

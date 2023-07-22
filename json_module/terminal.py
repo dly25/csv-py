@@ -1,5 +1,5 @@
 import json
-from .load_save import load_data, save_data
+from .load_save import load_data, save_data, sorted_data
 from .show import show_data
 from .change import change_data
 from .filter import filter_data
@@ -26,6 +26,9 @@ def terminal_data():
             sort_data(data)
         elif inp == "delete":
             delete_data(data)
+        elif inp == "sorted":
+            sorted_data(data)
+            terminal_data()
         else:
             print("Ошибка!!! Не правильный ввод команды")
             terminal_data()
