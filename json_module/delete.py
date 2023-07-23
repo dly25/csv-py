@@ -4,7 +4,7 @@ def delete_data(data):
 
     try:
         inp = input("Хотите удалить часть файла?(yes/no): ")
-        if not inp.lower() in ("no", "#"):
+        if inp.lower() in ("yes", "/"):
             inp_fun, inp_delete = input("Полное удаления или ключ-значения?"
                                      "(full person(1..)/ item user_...): ").strip().split()
             if inp_fun.lower() == "full":
@@ -13,8 +13,8 @@ def delete_data(data):
                 print(f"Удаленный {inp_delete}: {data_del}")
                 print()
                 terminal_data()
-
-
-
+        elif inp.lower() in ("no", "#"):
+            print()
+            terminal_data()
     except ValueError as e:
         print(e)

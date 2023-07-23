@@ -4,14 +4,14 @@ def change_data(data):
 
     try:
         inp = input("Хотите изменить файл?(yes/no): ")
-        if not inp.lower() in ("no", "#"):
+        if inp.lower() in ("yes", "/"):
             inp_person, inp_item, inp_change = input("Введите запрос на изменения data пример(person1)"
                                                      "(user_name)(изменения) ").strip().split()
             data[inp_person][inp_item] = inp_change
             save_data(data)
             print()
             terminal_data()
-        else:
+        elif inp.lower() in ("no", "#"):
             print()
             terminal_data()
     except ValueError:

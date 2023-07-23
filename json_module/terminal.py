@@ -7,13 +7,14 @@ from .count import count_data
 from .sort import sort_data
 from .delete import delete_data
 from .create import create_data
+from .search import search_data
 
 def terminal_data():
 
     data = load_data()
     save_data(data)
     try:
-        inp = input("Введите команду(show, change, filter, count, sort, delete, create): ").lower()
+        inp = input("Введите команду(show, change, filter, count, sort, delete, create, search): ").lower()
 
         if inp == "show":
             show_data(data)
@@ -33,6 +34,8 @@ def terminal_data():
         elif inp == "create":
             create_data(data)
             sorted_data(data)
+        elif inp == "search":
+            search_data(data)
         else:
             print("Ошибка!!! Не правильный ввод команды")
             terminal_data()

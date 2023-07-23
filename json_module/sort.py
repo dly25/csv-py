@@ -3,7 +3,7 @@ def sort_data(data):
 
     try:
         inp = input("Хотите отсортировать файл?(yes/no): ")
-        if not inp.lower() in ("no", "#"):
+        if inp.lower() in ("yes", "/"):
             inp_that, inp_order = input("Что хотите отсортировать и в каком порядке пример"
                         "(user_age (1/0) / no): ").strip().split()
             if not inp_that == "no":
@@ -15,8 +15,10 @@ def sort_data(data):
                 print(sorted_data)
                 print()
                 terminal_data()
-        else:
+        elif inp.lower() in ("no", "#"):
             print()
             terminal_data()
     except ValueError as e:
         print(e)
+        print()
+        terminal_data()

@@ -14,4 +14,6 @@ def show_data(data):
             raise ValueError("НЕ правильный запрос!")
     except ValueError as e:
         print(e)
+        print()
+        terminal_data()
 
