@@ -1,8 +1,13 @@
 {
+    "person0": {
+        "user_name": "Arina",
+        "user_age": 8,
+        "user_email": "arina@gmail.com"
+    },
     "person1": {
-        "user_name": "Anton",
-        "user_age": 50,
-        "user_email": "aaa@gmail.com"
+        "user_name": "fff",
+        "user_age": 8,
+        "user_email": "fff"
     },
     "person2": {
         "user_name": "Anton",
