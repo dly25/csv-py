@@ -4,7 +4,8 @@ def show_data(data):
     try:
         inp = input("Введите запрос на показ data (yes/no): ")
         if inp == "yes":
-            print(data)
+            for data_area in data:
+                print(f"{data_area}: {data[data_area]}")
             print()
             terminal_data()
         elif inp in ("no", "#"):
