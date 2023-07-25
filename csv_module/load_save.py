@@ -1,6 +1,8 @@
-def main():
-    pass
+import csv
+def load_data():
+    try:
 
+    except FileNotFoundError:
+        print("Файл не найден!")
+    except сsv
 
-if __name__ == '__main__':
-    main()
