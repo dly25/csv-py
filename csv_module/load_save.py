@@ -2,7 +2,7 @@ import csv
 def load_data():
     try:
         with open("data.csv", "r") as file:
-            reader = csv.reader(file)
+            reader = csv.DictReader(file)
             data = [row for row in reader]
             return data
     except FileNotFoundError:
@@ -13,6 +13,12 @@ def load_data():
         return []
 
 def save_data(data):
-    with open("data.csv", "a") as file:
-        data = csv.writer(file)
+    fieldnames = ["Person", "Name", "Age", "Email"]
+
+    with open("data.csv", "w", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=fieldnames)
+        writer.writeheader()
+
+        for person in data:
+            writer.writerow(person)
 
