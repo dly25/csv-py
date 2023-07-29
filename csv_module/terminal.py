@@ -8,17 +8,21 @@ def terminal_data():
     try:
         data = load_data()
 
-        inp = input("Введите команду(show, create): ").lower()
+        inp = input("Введите команду(show, create, delete): ").lower()
 
         if inp == "show":
             show_data(data)
         if inp == "create":
             create_data(data)
             save_data(data)
-        if inp == "create":
-            delete_data()
+            sorted_data(data)
+        if inp == "delete":
+            delete_data(data)
         if inp == "sorted":
             sorted_data(data)
             terminal_data()
     except ValueError as e:
         print(e)
+        terminal_data()
+    except KeyboardInterrupt:
+        print()
