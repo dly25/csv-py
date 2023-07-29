@@ -23,5 +23,14 @@ def save_data(data):
             writer.writerow(person)
 
 def sorted_data(data):
+    try:
+        sort_data = sorted(data, key=lambda row: row["Person"])
+        save_data(sort_data)
+        for output in sort_data:
+            print(output)
+        print()
+
+    except NameError:
+        print("Не известная переменная!")
     
 
