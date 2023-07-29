@@ -22,3 +22,6 @@ def save_data(data):
         for person in data:
             writer.writerow(person)
 
+def sorted_data(data):
+    
+
